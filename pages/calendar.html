@@ -848,6 +848,8 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
+      //delete the ability to resize the duration of an event (always 1h50)
+      eventDurationEditable: false,
       //set interval time for event to be two hours
       slotDuration: '02:00:00',
       //set the first day displayed in a week to be a Monday

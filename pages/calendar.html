@@ -848,6 +848,8 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
+      // disable the all day events
+      allDaySlot: false,
       // added the default view to be weekly view
       defaultView: 'agendaWeek',
       // the minimum time displayed in the calendar (8AM)

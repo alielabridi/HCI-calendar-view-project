@@ -848,6 +848,8 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
+      //set interval time for event to be two hours
+      slotDuration: '02:00:00',
       //set the first day displayed in a week to be a Monday
       firstDay: 1,
       //set the height to adapt to the content

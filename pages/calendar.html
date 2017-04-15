@@ -530,17 +530,16 @@
             <div class="box-body">
               <!-- the events -->
               <div id="external-events">
-                <div class="external-event bg-green">Lunch</div>
-                <div class="external-event bg-yellow">Go home</div>
-                <div class="external-event bg-aqua">Do homework</div>
-                <div class="external-event bg-light-blue">Work on UI design</div>
-                <div class="external-event bg-red">Sleep tight</div>
-                <div class="checkbox">
-                  <label for="drop-remove">
-                    <input type="checkbox" id="drop-remove">
-                    remove after drop
-                  </label>
-                </div>
+                (Click on the classes to display more information)<br>
+                <label>Class: </label><span id="Class"></span><br>
+                <label>Instructor: </label><span id="Instructor"></span><br>
+                <label>Proctor(s): </label><span id="Proctor"></span><br>
+                <label>Date: </label><span id="Date"></span><br>
+                <label>Start Time: </label><span id="Start"></span><br>
+                <label>Finish Time: </label><span id="Finish"></span><br>
+                <label>Number of Students: </label><span id="Students"></span><br>
+                <label>Building: </label><span id="Building"></span><br>
+                <label>Room: </label><span id="Room"></span><br>
               </div>
             </div>
             <!-- /.box-body -->
@@ -814,11 +813,16 @@
     $('#calendar').fullCalendar({
       // event click on an exam to display more information about it
       eventClick: function(calEvent, jsEvent, view) {
+        $("#Class").text(calEvent.title);
+        $("#Instructor").text(calEvent.instructor);
+        $("#Proctor").text(calEvent.proctor);
+        $("#Date").text(calEvent.date);
+        $("#Start").text(calEvent.timeStart);
+        $("#Finish").text(calEvent.timeEnd);
+        $("#Students").text(calEvent.numberOfStudents);
+        $("#Building").text(calEvent.building);
+        $("#Room").text(calEvent.room);
 
-        alert('Event: ' + calEvent.title);
-        alert('Event: ' + calEvent.moreinfo);
-        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        alert('View: ' + view.name);
 
 
       },
@@ -863,13 +867,14 @@
       events: [
         {
           title: 'CSC1401 Section 1',
+          instructor:"Dr. Cavalli",
+          proctor:"Ali Elabridi",
           date:"07-June-2017",
           timeStart:"10:00AM",
           timeEnd:"11:50AM",
-          numberOfStudents:30,
-
-
-          moreinfo: "test",
+          numberOfStudents:"30",
+          building:"8B",
+          room:"008",
           start: new Date(2017, 4, 1, 10, 00), //months are zero based!!
           end: new Date(2017, 4, 1, 11, 50),
           backgroundColor: "#3c8dbc", //light-blue

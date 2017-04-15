@@ -848,6 +848,16 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
+      // event click on an exam to display more information about it
+      eventClick: function(calEvent, jsEvent, view) {
+
+        alert('Event: ' + calEvent.title);
+        alert('Event: ' + calEvent.moreinfo);
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        alert('View: ' + view.name);
+
+
+      },
       //delete the ability to resize the duration of an event (always 1h50)
       eventDurationEditable: false,
       //set interval time for event to be two hours
@@ -889,6 +899,7 @@
       events: [
         {
           title: 'CSC1401',
+          moreinfo: "test",
           start: new Date(2017, 4, 1, 10, 00), //months are zero based!!
           end: new Date(2017, 4, 1, 11, 50),
           backgroundColor: "#3c8dbc", //light-blue

@@ -850,6 +850,14 @@
     $('#calendar').fullCalendar({
       // added the default view to be weekly view
       defaultView: 'agendaWeek',
+      // the business hours (when do exam start and finish with days)
+      businessHours: {
+      // days of week. an array of zero-based day of week integers (0=Sunday)
+      dow: [ 1, 2, 3, 4 ], // Monday - Thursday
+
+      start: '8:00', // a start time (10am in this example)
+      end: '20:00', // an end time (6pm in this example)
+      },
       header: {
         left: 'prev,next today',
         center: 'title',
@@ -868,45 +876,46 @@
           start: new Date(y, m, 1),
           backgroundColor: "#f56954", //red
           borderColor: "#f56954" //red
-        },
-        {
-          title: 'Long Event',
-          start: new Date(y, m, d - 5),
-          end: new Date(y, m, d - 2),
-          backgroundColor: "#f39c12", //yellow
-          borderColor: "#f39c12" //yellow
-        },
-        {
-          title: 'Meeting',
-          start: new Date(y, m, d, 10, 30),
-          allDay: false,
-          backgroundColor: "#0073b7", //Blue
-          borderColor: "#0073b7" //Blue
-        },
-        {
-          title: 'Lunch',
-          start: new Date(y, m, d, 12, 0),
-          end: new Date(y, m, d, 14, 0),
-          allDay: false,
-          backgroundColor: "#00c0ef", //Info (aqua)
-          borderColor: "#00c0ef" //Info (aqua)
-        },
-        {
-          title: 'Birthday Party',
-          start: new Date(y, m, d + 1, 19, 0),
-          end: new Date(y, m, d + 1, 22, 30),
-          allDay: false,
-          backgroundColor: "#00a65a", //Success (green)
-          borderColor: "#00a65a" //Success (green)
-        },
-        {
-          title: 'Click for Google',
-          start: new Date(y, m, 28),
-          end: new Date(y, m, 29),
-          url: 'http://google.com/',
-          backgroundColor: "#3c8dbc", //Primary (light-blue)
-          borderColor: "#3c8dbc" //Primary (light-blue)
         }
+        ,
+        // {
+        //   title: 'Long Event',
+        //   start: new Date(y, m, d - 5),
+        //   end: new Date(y, m, d - 2),
+        //   backgroundColor: "#f39c12", //yellow
+        //   borderColor: "#f39c12" //yellow
+        // },
+        // {
+        //   title: 'Meeting',
+        //   start: new Date(y, m, d, 10, 30),
+        //   allDay: false,
+        //   backgroundColor: "#0073b7", //Blue
+        //   borderColor: "#0073b7" //Blue
+        // },
+        // {
+        //   title: 'Lunch',
+        //   start: new Date(y, m, d, 12, 0),
+        //   end: new Date(y, m, d, 14, 0),
+        //   allDay: false,
+        //   backgroundColor: "#00c0ef", //Info (aqua)
+        //   borderColor: "#00c0ef" //Info (aqua)
+        // },
+        // {
+        //   title: 'Birthday Party',
+        //   start: new Date(y, m, d + 1, 19, 0),
+        //   end: new Date(y, m, d + 1, 22, 30),
+        //   allDay: false,
+        //   backgroundColor: "#00a65a", //Success (green)
+        //   borderColor: "#00a65a" //Success (green)
+        // },
+        // {
+        //   title: 'Click for Google',
+        //   start: new Date(y, m, 28),
+        //   end: new Date(y, m, 29),
+        //   url: 'http://google.com/',
+        //   backgroundColor: "#3c8dbc", //Primary (light-blue)
+        //   borderColor: "#3c8dbc" //Primary (light-blue)
+        // }
       ],
       editable: true,
       droppable: false, // this allows things to be dropped onto the calendar !!!

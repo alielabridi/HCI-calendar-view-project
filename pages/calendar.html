@@ -848,6 +848,8 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
+      // added the default view to be weekly view
+      defaultView: 'agendaWeek',
       header: {
         left: 'prev,next today',
         center: 'title',

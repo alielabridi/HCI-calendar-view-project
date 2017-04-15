@@ -848,7 +848,9 @@
         m = date.getMonth(),
         y = date.getFullYear();
     $('#calendar').fullCalendar({
-      //
+      //set the first day displayed in a week to be a Monday
+      firstDay: 1,
+      //set the height to adapt to the content
       height: "auto",
       //set the start date of exams
       defaultDate: "2017-05-04",
